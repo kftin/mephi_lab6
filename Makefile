@@ -6,7 +6,7 @@ all: main
 #tests.o: tests.cpp f_lab2_linkedlistsequence.h f_lab2_arraysequence.h
 #	$(CC) $(CFLAFS) -c tests.cpp
 
-main.o: main.cpp graph.h
+main.o: main.cpp graph.h algosHoroshiy.h
 	$(CC) $(CFLAGS) -c main.cpp
 
 main: main.o

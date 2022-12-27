@@ -1,3 +1,5 @@
+#ifndef bebebe
+#define bebebe
 #include <iostream>
 #include <vector>
 #include <map>
@@ -30,7 +32,7 @@ class Arc {
 template <typename TWeight>
 class Graph {
     public:
-        inline static int id = 100;
+        inline static int id = 1;
         map<int, Arc<TWeight>> arcs;
         vector<Node> nodes;
 
@@ -43,17 +45,18 @@ class Graph {
 
         void AddNodes(int count) {
             for (int i = 0; i < count; i++) {
-                Node newNode;
-                nodes.push_back(newNode);
+                //Node newNode;
+                //nodes.push_back(newNode);
+                nodes.emplace_back();
             }
         }
 
-        void AddArc(int start, int end, TWeight weight) {
-            Arc arc(start, end, weight);
-            nodes[start].outgoing.push_back(id);
+        void AddArc(int start_, int end_, TWeight weight_) {
+            Arc arc(start_, end_, weight_);
+            (nodes[start_]).outgoing.push_back(id);
             arcs[id++] = arc;
         }
 };
 
 
-
+#endif
